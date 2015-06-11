@@ -340,6 +340,12 @@ nextevent(GEvent *gev)
 	return 0;
 }
 
+static int
+settitle(char *title)
+{
+	return XStoreName(d, win, title);
+}
+
 struct gui gui_x11 = {
 	.init		= init,
 	.fini		= fini,
@@ -350,6 +356,7 @@ struct gui gui_x11 = {
 	.drawtext	= drawtext,
 	.getfont	= getfont,
 	.nextevent	= nextevent,
+	.settitle	= settitle,
 	.setpointer	= setpointer,
 	.textwidth	= textwidth,
 	.hmargin	= HMargin,

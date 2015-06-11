@@ -27,6 +27,7 @@ struct w {
 	EBuf *eb;              /* underlying buffer object */
 	GRect rect;            /* rectangle on the screen */
 	int dirty: 1;          /* force redraw */
+	int tag: 1;            /* is the window a tag? */
 };
 
 enum CursorLoc { CTop, CMid, CBot };

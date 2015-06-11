@@ -33,6 +33,8 @@ chwin(W *w)
 {
 	cmd_parse(GKEsc); /* reset command parser state */
 	curwin = w;
+	if (!w->tag)
+		g->settitle(w->eb->path ? w->eb->path : "no name");
 }
 
 static int

@@ -104,6 +104,7 @@ struct gui {
 	void (*setpointer)(GPointer pt);
 	int (*textwidth)(Rune *str, int len);
 	int (*nextevent)(GEvent *eret);
+	int (*settitle)(char *title);
 	int hmargin;
 	int vmargin;
 	int border;
