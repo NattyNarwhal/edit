@@ -1,0 +1,9 @@
+# ignore object files/binaries
+obj
+# tex droppings
+*.dvi
+*.idx
+*.log
+*.scn
+*.tex
+*.toc
