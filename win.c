@@ -54,7 +54,9 @@ win_init(struct gui *gui)
 	tag.win.eb = eb_new(-1);
 	tag.win.tag = 1;
 	/* if the file doesn't exist, provide defaults */
-	if (ex_get(&tag.win, strcat(getenv("HOME"), "/.tag")))
+	char *tagfile = getenv("HOME");
+	strcat(tagfile, "/.tag");
+	if (ex_get(&tag.win, tagfile))
 		eb_ins_utf8(tag.win.eb, 0, (unsigned char *)TagInit, sizeof TagInit - 1);
 
 	/* the gui module does not give a way to access the screen
